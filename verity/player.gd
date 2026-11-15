@@ -15,7 +15,8 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var current_anim: String = ""
+# Keeps track of which animation is currently active (defaults to "happy")
+var current_anim: String = "happy"
 var _coyote_timer: float = 0.0
 var _jump_buffer_timer: float = 0.0
 var _was_on_floor: bool = false
@@ -25,15 +26,9 @@ var _base_sprite_scale: Vector2 = Vector2.ONE
 func _ready() -> void:
 	_base_sprite_scale = animated_sprite.scale
 	_was_on_floor = is_on_floor()
-
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-# Keeps track of which animation is currently active (defaults to "happy")
-var current_anim: String = "happy"
-
-func _ready() -> void:
 	# Play "happy" immediately when the player spawns
-	animated_sprite.play("happy")
+	animated_sprite.play(current_anim)
+
 
 func _physics_process(delta: float) -> void:
 	var grounded_before_move: bool = is_on_floor()
@@ -43,21 +38,10 @@ func _physics_process(delta: float) -> void:
 	if not grounded_before_move:
 		velocity += get_gravity() * delta
 
-	var grounded_before_move: bool = is_on_floor()
-	if not grounded_before_move:
-		velocity += get_gravity() * delta
-
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or _coyote_timer > 0.0):
-		velocity.y = jump_velocity
-		_coyote_timer = 0.0
-
 	var direction: float = Input.get_axis("left", "right")
 	var acceleration: float = ground_acceleration if grounded_before_move else air_acceleration
 	if not is_zero_approx(direction):
 		velocity.x = move_toward(velocity.x, direction * move_speed, acceleration * delta)
-	else:
-		var braking: float = ground_friction if grounded_before_move else air_acceleration * 0.35
-		velocity.x = move_toward(velocity.x, 0.0, braking * delta)
 	else:
 		var braking: float = ground_friction if grounded_before_move else air_acceleration * 0.35
 		velocity.x = move_toward(velocity.x, 0.0, braking * delta)
@@ -72,12 +56,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("jump") and velocity.y < 0.0:
 		velocity.y *= jump_cut_multiplier
 
-	# Flip the sprite left or right when moving
-	if direction > 0:
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
-
 	move_and_slide()
 	_update_visuals(direction)
 
@@ -85,6 +63,7 @@ func _physics_process(delta: float) -> void:
 	if grounded_after_move and not _was_on_floor:
 		_play_squash(Vector2(1.2, 0.82), 0.10)
 	_was_on_floor = grounded_after_move
+
 
 # --- STANDBY HELPER ---
 # Whenever you're ready to use "blank", "glammedup", "moggity", "sad", or "smiley",
@@ -103,8 +82,8 @@ func _update_visuals(direction: float) -> void:
 		return
 
 	if absf(velocity.x) > 8.0:
-		if animated_sprite.sprite_frames.has_animation("happy"):
-			animated_sprite.play("happy")
+		if animated_sprite.sprite_frames.has_animation(current_anim):
+			animated_sprite.play(current_anim)
 	else:
 		animated_sprite.stop()
 		animated_sprite.frame = 0
