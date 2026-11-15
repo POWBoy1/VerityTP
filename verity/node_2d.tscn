@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bxbuxbkg7uhwr"]
+
+[ext_resource type="PackedScene" uid="uid://cjhegtxha0wuj" path="res://player.tscn" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=1678514840]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=300579043]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="player" parent="." unique_id=173829428 instance=ExtResource("1_wtcfe")]
