@@ -39,7 +39,7 @@ animations = [{
 "texture": ExtResource("5_n7ghd")
 }],
 "loop": 1,
-"name": &"mog",
+"name": &"moggity",
 "speed": 5.0
 }, {
 "frames": [{
@@ -69,7 +69,7 @@ script = ExtResource("1_4flbx")
 position = Vector2(21, -21)
 scale = Vector2(0.328125, 0.31640628)
 sprite_frames = SubResource("SpriteFrames_44ofn")
-animation = &"blank"
+animation = &"moggity"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265377503]
 position = Vector2(21, -20)
