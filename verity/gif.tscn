@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d3bbg8kd20ocs"]
+
+[ext_resource type="Script" uid="uid://df0ycddeimtjw" path="res://gif.gd" id="1_tluh3"]
+[ext_resource type="AudioStream" uid="uid://btubexpw2ag21" path="res://assets/Its me Its Verity - Horror Skunx song.ogg" id="2_c0u1a"]
+
+[node name="gif" type="Node2D" unique_id=1092080221]
+script = ExtResource("1_tluh3")
+
+[node name="audio" type="AudioStreamPlayer3D" parent="." unique_id=599544958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028171241, -0.0032684654, 0.0004956275)
+stream = ExtResource("2_c0u1a")
+autoplay = true

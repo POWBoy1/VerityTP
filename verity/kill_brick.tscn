@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://kill_brick.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/generated/spike_block.png" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb"]
+size = Vector2(46, 14)
+
+[node name="KillBrick" type="Area2D"]
+collision_layer = 8
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kb")

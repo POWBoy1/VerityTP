@@ -1,0 +1,22 @@
+[gd_scene format=4 uid="uid://bam5v55kpdoei"]
+
+[ext_resource type="Texture2D" uid="uid://byae6dqv4vgrv" path="res://assets/minecraft-tiles.png" id="1_sm07r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
+texture = ExtResource("1_sm07r")
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_44ofn"]
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 0
+sources/1 = SubResource("TileSetAtlasSource_h2yge")
+
+[node name="Platforms2" type="TileMapLayer" unique_id=1785368107]
+tile_map_data = PackedByteArray("AAAGAPz/AQACAAUAAAAHAPz/AQACAAUAAAAIAPz/AQACAAUAAAAJAPz/AQACAAUAAAANAPv/AQACAAUAAAAOAPv/AQACAAUAAAAPAPv/AQACAAUAAAAQAPv/AQACAAUAAAAUAPz/AQACAAUAAAAVAPz/AQACAAUAAAAWAPz/AQACAAUAAAAXAPz/AQACAAUAAAAbAPv/AQACAAUAAAAcAPv/AQACAAUAAAAdAPv/AQACAAUAAAAeAPv/AQACAAUAAAAiAPz/AQACAAUAAAAjAPz/AQACAAUAAAAkAPz/AQACAAUAAAAlAPz/AQACAAUAAAApAPv/AQACAAUAAAAqAPv/AQACAAUAAAArAPv/AQACAAUAAAAsAPv/AQACAAUAAAA=")
+tile_set = SubResource("TileSet_44ofn")

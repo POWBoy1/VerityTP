@@ -21,10 +21,12 @@ var _coyote_timer: float = 0.0
 var _jump_buffer_timer: float = 0.0
 var _was_on_floor: bool = false
 var _base_sprite_scale: Vector2 = Vector2.ONE
+var _spawn_position: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
 	_base_sprite_scale = animated_sprite.scale
+	_spawn_position = global_position
 	_was_on_floor = is_on_floor()
 	# Play "happy" immediately when the player spawns
 	animated_sprite.play(current_anim)
@@ -51,6 +53,7 @@ func _physics_process(delta: float) -> void:
 		_jump_buffer_timer = 0.0
 		_coyote_timer = 0.0
 		_play_squash(Vector2(0.82, 1.18), 0.08)
+		ZivaSfx.play(self, preload("res://assets/generated/audio/jump_boing.mp3"))
 
 	# Releasing jump early cuts upward speed, giving the player control over jump height.
 	if Input.is_action_just_released("jump") and velocity.y < 0.0:
@@ -72,6 +75,15 @@ func change_animation(anim_name: String) -> void:
 	if current_anim != anim_name:
 		current_anim = anim_name
 		animated_sprite.play(current_anim)
+
+
+## Respawn at the level start. Called by hazard areas (KillBrick) on contact.
+func kill() -> void:
+	global_position = _spawn_position
+	velocity = Vector2.ZERO
+	_coyote_timer = 0.0
+	_jump_buffer_timer = 0.0
+	_play_squash(Vector2(0.6, 1.4), 0.08)
 
 
 func _update_visuals(direction: float) -> void:
