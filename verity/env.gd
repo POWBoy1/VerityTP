@@ -1,5 +1,4 @@
 extends RefCounted
-class_name Env
 
 ## Loads key=value pairs from the project's .env file into the process environment.
 ## Copy .env.example to .env and fill in your local credentials.

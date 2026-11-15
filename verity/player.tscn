@@ -1,16 +1,80 @@
 [gd_scene format=3 uid="uid://cjhegtxha0wuj"]
 
 [ext_resource type="Script" uid="uid://b88hvutwdyyom" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://cyi7vh5y7yycn" path="res://icon.svg" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dl6mc3uxnh37c" path="res://assets/pixil-frame-0.png" id="2_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://ceny185aturqr" path="res://assets/pixil-frame-4.png" id="3_dw050"]
+[ext_resource type="Texture2D" uid="uid://gxk0qmyhnj5o" path="res://assets/pixil-frame-1.png" id="4_b26j0"]
+[ext_resource type="Texture2D" uid="uid://b0ye0nm1mq5ss" path="res://assets/pixil-frame-5.png" id="5_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://2u3a3o5d4v6p" path="res://assets/pixil-frame-2.png" id="6_nvl01"]
+[ext_resource type="Texture2D" uid="uid://dw8s80upw5m6u" path="res://assets/pixil-frame-3.png" id="7_ivps1"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_44ofn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_44ofn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1jxqw")
+}],
+"loop": 1,
+"name": &"blank",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dw050")
+}],
+"loop": 1,
+"name": &"glammedup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_b26j0")
+}],
+"loop": 1,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_n7ghd")
+}],
+"loop": 1,
+"name": &"mog",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nvl01")
+}],
+"loop": 1,
+"name": &"sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ivps1")
+}],
+"loop": 1,
+"name": &"smiley",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgyfs"]
+size = Vector2(42, 40)
 
 [node name="player" type="CharacterBody2D" unique_id=173829428]
 script = ExtResource("1_4flbx")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1235619704]
-position = Vector2(78, -74)
-texture = ExtResource("2_onrkg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=351050762]
+position = Vector2(21, -21)
+scale = Vector2(0.328125, 0.31640628)
+sprite_frames = SubResource("SpriteFrames_44ofn")
+animation = &"mog"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1809925247]
-shape = SubResource("WorldBoundaryShape2D_44ofn")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265377503]
+position = Vector2(21, -21)
+shape = SubResource("RectangleShape2D_xgyfs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=229736397]
+position = Vector2(21, -12)
+zoom = Vector2(15, 15)
