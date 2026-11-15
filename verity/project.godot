@@ -8,16 +8,16 @@
 
 config_version=5
 
-[autoload]
-
-Env="*res://env.gd"
-
 [application]
 
 config/name="Verity"
 run/main_scene="uid://bxbuxbkg7uhwr"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Env="*res://env.gd"
 
 [display]
 
