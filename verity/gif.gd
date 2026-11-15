@@ -1,7 +1,6 @@
-extends Node2D
+extends Node
 
-@onready var _audio = $AudioStreamPlayer2D # Change this if your node has a different name
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_audio.play()
+	audio_player.play()

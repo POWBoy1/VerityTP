@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceonpftjl00yj"
-path="res://.godot/imported/killbrick.png-4218551c294fe50892e1e846bb25f302.ctex"
+path="res://.godot/imported/killbrick.png-98680dd1cb64fd283d73a2eae3d73565.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/killbrick.png"
-dest_files=["res://.godot/imported/killbrick.png-4218551c294fe50892e1e846bb25f302.ctex"]
+source_file="res://assets/kb/killbrick.png"
+dest_files=["res://.godot/imported/killbrick.png-98680dd1cb64fd283d73a2eae3d73565.ctex"]
 
 [params]
 

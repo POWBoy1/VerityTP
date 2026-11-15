@@ -1,7 +1,7 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://kill_brick.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://assets/generated/spike_block.png" id="2_tex"]
+[ext_resource type="Script" uid="uid://dynnsvu1vv0ys" path="res://kill_brick.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b3eua7hrvlpod" path="res://assets/kb/spike_block.png" id="2_tex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb"]
 size = Vector2(46, 14)

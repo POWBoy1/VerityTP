@@ -2,11 +2,27 @@
 
 [ext_resource type="Script" uid="uid://df0ycddeimtjw" path="res://gif.gd" id="1_tluh3"]
 [ext_resource type="AudioStream" uid="uid://btubexpw2ag21" path="res://assets/Its me Its Verity - Horror Skunx song.ogg" id="2_c0u1a"]
+[ext_resource type="VideoStream" uid="uid://d4ffpcfyysrk" path="res://assets/pixil-gif-drawing.ogv" id="3_c0u1a"]
 
 [node name="gif" type="Node2D" unique_id=1092080221]
 script = ExtResource("1_tluh3")
 
-[node name="audio" type="AudioStreamPlayer3D" parent="." unique_id=599544958]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=500939599]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=208709659]
+offset_left = -978.00006
+offset_top = -541.0
+offset_right = -850.00006
+offset_bottom = -413.0
+scale = Vector2(15.310505, 8.44367)
+audio_track = 1
+stream = ExtResource("3_c0u1a")
+volume_db = 0.99999994
+autoplay = true
+loop = true
+
+[node name="audio" type="AudioStreamPlayer3D" parent="VideoStreamPlayer" unique_id=599544958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028171241, -0.0032684654, 0.0004956275)
 stream = ExtResource("2_c0u1a")
+volume_db = 12.414
 autoplay = true

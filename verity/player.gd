@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		_jump_buffer_timer = 0.0
 		_coyote_timer = 0.0
 		_play_squash(Vector2(0.82, 1.18), 0.08)
-		ZivaSfx.play(self, preload("res://assets/generated/audio/jump_boing.mp3"))
+		ZivaSfx.play(self, preload("res://assets/kb/audio/jump_boing.mp3"))
 
 	# Releasing jump early cuts upward speed, giving the player control over jump height.
 	if Input.is_action_just_released("jump") and velocity.y < 0.0:
