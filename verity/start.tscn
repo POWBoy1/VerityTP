@@ -25,14 +25,30 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -693.0
-offset_top = 190.0
-offset_right = 693.0
-offset_bottom = 190.0
+offset_left = -756.0
+offset_top = 200.0
+offset_right = 774.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 150
-text = "The Mogging Verity"
+text = "Verity the Platformer"
+
+[node name="Label" type="Label" parent="Panel/Label" unique_id=179797949]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -231.0
+offset_top = 81.99999
+offset_right = 1420.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2575816, 2.376925)
+theme_override_font_sizes/font_size = 150
+text = "made by the verity trio"
 
 [node name="Button" type="Button" parent="Panel" unique_id=1797183181]
 layout_mode = 1
