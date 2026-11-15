@@ -17,9 +17,9 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if _cooling_down:
-		return
+		return;
 	if body.has_method("kill"):
 		body.kill()
 		_cooling_down = true
-		await get_tree().create_timer(cooldown).timeout
+		get_tree().change_scene_to_file("res://badmain.tscn")
 		_cooling_down = false
