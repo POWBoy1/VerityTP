@@ -8,6 +8,10 @@
 
 config_version=5
 
+[autoload]
+
+Env="*res://env.gd"
+
 [application]
 
 config/name="Verity"
