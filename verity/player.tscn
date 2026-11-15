@@ -72,7 +72,7 @@ sprite_frames = SubResource("SpriteFrames_44ofn")
 animation = &"moggity"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265377503]
-position = Vector2(21, -21)
+position = Vector2(21, -20)
 shape = SubResource("RectangleShape2D_xgyfs")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=229736397]

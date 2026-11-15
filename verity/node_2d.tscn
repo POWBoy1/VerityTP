@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b0j8jvrnutmhw"]
+
+[ext_resource type="PackedScene" uid="uid://cjhegtxha0wuj" path="res://player.tscn" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://cyi7vh5y7yycn" path="res://icon.svg" id="2_0e48y"]
+
+[node name="Node2D" type="Node2D" unique_id=1678514840]
+position = Vector2(1, -2)
+
+[node name="player" parent="." unique_id=173829428 instance=ExtResource("1_wtcfe")]
+position = Vector2(332, -145)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=300579043]
+offset_left = 56.0
+offset_top = 142.0
+offset_right = 96.0
+offset_bottom = 182.0
+texture = ExtResource("2_0e48y")
+metadata/_edit_use_anchors_ = true
