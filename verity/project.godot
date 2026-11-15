@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Verity"
-run/main_scene="uid://bxbuxbkg7uhwr"
+run/main_scene="uid://cxcffhn31bo2p"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

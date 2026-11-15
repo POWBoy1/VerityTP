@@ -9,7 +9,7 @@
 script = ExtResource("1_4flbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1235619704]
-position = Vector2(208, -84)
+position = Vector2(78, -74)
 texture = ExtResource("2_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1809925247]
