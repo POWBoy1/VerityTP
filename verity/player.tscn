@@ -72,9 +72,10 @@ sprite_frames = SubResource("SpriteFrames_44ofn")
 animation = &"mog"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265377503]
-position = Vector2(21, -21)
+position = Vector2(21, -20)
 shape = SubResource("RectangleShape2D_xgyfs")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=229736397]
-position = Vector2(21, -12)
-zoom = Vector2(15, 15)
+position = Vector2(21, -20)
+rotation = -6.2831855
+zoom = Vector2(5, 5)
